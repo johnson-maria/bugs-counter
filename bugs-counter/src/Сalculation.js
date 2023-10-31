@@ -7,12 +7,11 @@ function Calculation() {
     const [timeAmount, setTimeAmountToInput] = useState(Number(localStorage.getItem('timeAmount'))||0);
 
     useEffect(() => {
-        document.title = `Your task size is ${taskSize}`;
+        document.title = `Size: ${taskSize}`;
     }, [taskSize]);
 
     const calculate = () => {
         let result = caseAmount * timeAmount * 2 / 60 / 8;
-        console.log(result)
         let calculatedTaskSize;
 
         if (result < 1) {
@@ -32,6 +31,7 @@ function Calculation() {
         }
 
         setTaskSize(calculatedTaskSize);
+        localStorage.setItem('taskSize', calculatedTaskSize);
     }
 
     const setCaseAmount = (event) => {
@@ -48,7 +48,7 @@ function Calculation() {
         <div className="Calculation">
             <input type="text" value={caseAmount||''} onChange={setCaseAmount} placeholder="Количество кейсов, шт" className="Input-amount"/><br/>
             <input type="text" value={timeAmount||''} onChange={setTimeAmount} placeholder="Примерное время на кейс, мин" className="Input-amount"/><br/>
-            <div><button onClick={calculate} className="Button">Рассчитать</button><h2>{taskSize}</h2></div>
+            <div><button onClick={calculate} className="Button">Рассчитать размер задачи</button><h2>{taskSize}</h2></div>
         </div>
     );
 }

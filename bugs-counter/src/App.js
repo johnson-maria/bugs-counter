@@ -35,9 +35,6 @@ function App() {
       localStorage.setItem('taskSize', '');
       localStorage.setItem('caseAmount', String(0));
       localStorage.setItem('timeAmount', String(0));
-      //setTaskSize('?');
-      //setCaseAmountToInput('');
-      //setTimeAmountToInput('');
       setCountCycle(0);
       setCountBugs(0);
       setTaskToInput('');
@@ -48,29 +45,37 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Calculation key={calculationKey} />
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-        <code>Bugs Counter Helper</code>
-        </p>
+        <div className="Calculation-div"><Calculation key={calculationKey} /></div>
 
-        <p className="Button-line">
-          <div><button onClick={cycleCountPlus} className="Button">Кол-во циклов</button><h2>{cycleCount}</h2></div>
-          <div><button onClick={bugsCountPlus} className="Button">Кол-во багов</button><h2>{bugsCount}</h2></div>
-        </p>
-        <div>
+        <div className="Task-box">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>Bugs Counter Helper</p>
+
           <input type="url" value={task} onChange={setTask} placeholder="Ссылка на задачу" className="Input"/>
           <div><button onClick={clearCounts} className="Button">Приступить к новой задаче</button></div>
-        </div>
+
         <p><a
             className="App-link"
             href="https://www.techtarget.com/searchsoftwarequality/definition/bug#:~:text=In%20computer%20technology%2C%20a%20bug,is%20manufactured%20into%20a%20microprocessor"
             target="_blank"
             rel="noopener noreferrer"
         >
-          Learn more about bugs
-        </a>
-        </p>
+          Узнай больше о багах
+        </a></p>
+        </div>
+
+
+        <div className="Button-line">
+          <div className="Cycles-counters">
+          <div>
+            <button onClick={cycleCountPlus} className="Button">Добавить цикл</button>
+            <h2>{cycleCount}</h2>
+          </div>
+          <div><button onClick={bugsCountPlus} className="Button">Добавить баг</button><h2>{bugsCount}</h2></div>
+          </div>
+        </div>
+
+
       </header>
     </div>
   );

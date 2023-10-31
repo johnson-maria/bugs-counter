@@ -1,5 +1,16 @@
 .App {
   text-align: center;
+  background-color: #282c34;
+
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+
+
+
 }
 
 .App-logo {
@@ -14,33 +25,77 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  display: table;
+  width: 100%;
+
 }
 
 .App-link {
   color: #61dafb;
+
+
+}
+
+.Calculation-div {
+  /*background: #9566d9;*/
+  width: 33.333%;
+  display: table-cell;
+
+
+}
+
+.Task-box {
+  /*background: #5d349b;*/
+  width: 33.333%;
+  display: table-cell;
+
+
 }
 
 .Button-line {
-  display:flex;
+
+  /*background: #772ce8;*/
+  width: 33.333%;
+  display: table-cell;
+  align-items: center;
+
+
 }
 
-.Button {
+.Cycles-counters {
+
+  display:flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.Button{
+
+  outline: 0;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 4px;
+  font-size: 13px;
+  height: 30px;
+  background-color: #9147ff;
+  color: white;
+  padding: 0 10px;
   margin: 20px;
+
+}
+
+.Button:hover {
+  background-color: #772ce8;
 }
 
 .Input {
-  width: 400px;
+  width: 300px;
   font-size: 1em;
 }
 
+/* Анимация для логотипа */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -49,3 +104,4 @@
     transform: rotate(360deg);
   }
 }
+
