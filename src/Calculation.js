@@ -1,7 +1,7 @@
 import './Calculation.css';
 import React, { useState, useEffect }  from "react";
 
-function Calculation() {
+export function Calculation() {
     const [taskSize, setTaskSize] = useState(localStorage.getItem('taskSize')||0);
     const [caseAmount, setCaseAmountToInput] = useState(Number(localStorage.getItem('caseAmount'))||0);
     const [timeAmount, setTimeAmountToInput] = useState(Number(localStorage.getItem('timeAmount'))||0);
@@ -52,5 +52,3 @@ function Calculation() {
         </div>
     );
 }
-
-export default Calculation;
