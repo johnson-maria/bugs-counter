@@ -1,7 +1,7 @@
 import './Counter.css';
 import React, { useState }  from "react";
 
-function Counter() {
+export function Counter() {
 
     const [cycleCount, setCountCycle] = useState(Number(localStorage.getItem('cycles'))||0);
     const [bugsCount, setCountBugs] = useState(Number(localStorage.getItem('bugs'))||0);
@@ -30,5 +30,3 @@ function Counter() {
 
     );
 }
-
-export default Counter;
